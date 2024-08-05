@@ -2,7 +2,8 @@ import React from "react";
 import Navbar from "./Navbar";
 import Spline from "./Spline";
 import Box from "./Box";
-import Nextpg from "./Nextpg";
+import About from "./About";
+import Community from "./Community";
 
 export default function Landing() {
   return (
@@ -12,7 +13,8 @@ export default function Landing() {
       <div className="absolute z-20 w-full h-screen rounded-md backdrop-filter backdrop-blur-sm bg-opacity-10"/>
       <Spline />
       <Box/>
-      <Nextpg />
+      <About />
+      <Community />
 
       </div>
     </>
