@@ -1,5 +1,7 @@
 "use client";
-import React, { useState } from "react";
+
+import { ConnectWallet, useAddress, useContract } from "@thirdweb-dev/react";
+import React, { useState, useEffect } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "../ui/sidebar";
 import {
   IconArrowLeft,
@@ -17,9 +19,57 @@ import { Analytics } from "../component/analytics";
 
 // Corrected Profile component
 const Profile = () => {
+
+    const address = useAddress();
+    const [proposals, setProposals] = useState([]);
+    const [proposalDescription, setProposalDescription] = useState("");
+    const { contract: token, isLoading: isTokenLoading } = useContract(
+      process.env.NEXT_PUBLIC_TOKEN_ADDRESS
+    );
+    const { contract: vote, isLoading: isVoteLoading } = useContract(
+      process.env.NEXT_PUBLIC_VOTE_ADDRESS
+    );
+
+    const getProposals = async () => {
+      if (!address || isVoteLoading) return;
+      const data = await vote.getAll();
+      setProposals(data);
+    };
+
+    const createProposal = async () => {
+      await vote.propose(proposalDescription);
+      window.location.reload();
+    };
+
+    const checkDelegate = async () => {
+      if (isTokenLoading || !address) return;
+      const delegation = await token.getDelegation();
+      if (delegation !== address) {
+        await token.delegateTo(address);
+        window.location.reload();
+      }
+    };
+
+    useEffect(() => {
+      getProposals();
+    }, [address, isVoteLoading]);
+
+    useEffect(() => {
+      checkDelegate();
+    }, [isTokenLoading]);
+
+
+
   return (
     <div className="flex justify-center items-center w-full bg-black">
-      <div className="text-white">User Profile Content Goes Here</div>
+      <div className="text-white">
+        <div className="w-[200px]">
+          <ConnectWallet/>
+
+        </div>
+        
+        
+      </div>
     </div>
   );
 };
