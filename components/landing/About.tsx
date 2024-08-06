@@ -1,23 +1,27 @@
 import React from 'react'
 
+
 function About() {
   return (
 
-    <div className='w-screen h-screen'>
-        <div className="z-20 absolute flex justify-center items-center w-full h-screen bg-gray-400 bg-opacity-5">
-            <div className="h-[60%] w-[60%] bg-gray-400 rounded-md backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 flex justify-center items-center">
-              <div>
-                <div>About BrickLayer DAO</div>
-                <div> Just niche video</div>
-              </div>
+    <div className=' relative w-full h-screen '>
+      <div className='h-screen w-full z-20  flex justify-center items-center bg-transparent '>
 
-              <div>
-                <div> This is how the story began </div>
-                <div> side me video</div>
-              </div>
+            <div className="h-[60%] w-[80%]  flex justify-center items-center">
 
+                <div className='w-[50%] h-full flex justify-center items-center '>
+                  <p className='w-[70%]'>We're building a VR university powered by a Web3 DAO! Education meets the future in an immersive, decentralized, and gamified learning experience!</p></div>
+                <div className='w-[50%] h-[80%]'> 
+                <img
+                  src=" https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWFrZ3M3dGw1cnM5YWI4MXE1b29jcXZ5aTJkeHI3aGtsbmV2ZnQzbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SSirUu2TrV65ymCi4J/giphy.webp"
+                  alt="Funny GIF"
+                  className='w-[80%] h-full'
+                />
+                  
+               
+                </div>
             </div>
-        </div>
+    </div>
   </div>
 
     

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar: React.FC = () => {
   return (
-    <div className="text-white w-full justify-between items-center z-50 fixed flex flex-row bg-transparent pt-9 px-8 sm:px-24">
+    <div className="text-white w-full justify-between items-center z-20 fixed flex flex-row bg-transparent pt-9 px-8 sm:px-24">
       {/* Logo Section */}
       <div className="Logo w-[30%] flex justify-start">
         <a href="#home" className="hover:text-white text-white/85">
