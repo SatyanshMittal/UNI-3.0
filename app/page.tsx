@@ -13,7 +13,7 @@ import Communityt from "@/components/landing/Communityt";
 export default function Page() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useEffect(() => {   
     if (scrollRef.current) {
       const scroll = new LocomotiveScroll({
         el: scrollRef.current,

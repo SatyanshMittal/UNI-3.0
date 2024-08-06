@@ -14,28 +14,36 @@ import { cn } from "@/lib/utils";
 import { AddCourse } from "../component/add-course";
 import { AddWorkshop } from "../component/add-workshop";
 import { Analytics } from "../component/analytics";
+
+// Corrected Profile component
+const Profile = () => {
+  return (
+    <div className="flex justify-center items-center w-full bg-black">
+      <div className="text-white">User Profile Content Goes Here</div>
+    </div>
+  );
+};
+
 const Addcourse = () => {
   return (
-    <div className="flex  justify-center items-center w-full bg-black">
-      <AddCourse/>
-      
+    <div className="flex justify-center items-center w-full bg-black">
+      <AddCourse />
     </div>
   );
 };
 
 const Addworkshop = () => {
   return (
-    <div className="flex  justify-center items-center w-full bg-black">
-      <AddWorkshop/>
+    <div className="flex justify-center items-center w-full bg-black">
+      <AddWorkshop />
     </div>
   );
 };
 
 const StudentStats = () => {
   return (
-    <div className="flex  justify-center items-center w-full bg-black">
-      <Analytics/>
-      
+    <div className="flex justify-center items-center w-full bg-black">
+      <Analytics />
     </div>
   );
 };
@@ -44,6 +52,14 @@ export default function SidebarDemo() {
   const [currentTab, setCurrentTab] = useState("Addcourse");
 
   const links = [
+    {
+      label: "Profile",
+      href: "#",
+      icon: (
+        <IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+      ),
+      component: "Profile",
+    },
     {
       label: "Add Course",
       href: "#",
@@ -76,11 +92,13 @@ export default function SidebarDemo() {
       ),
     },
   ];
-  
+
   const [open, setOpen] = useState(false);
 
   const renderComponent = () => {
     switch (currentTab) {
+      case "Profile":
+        return <Profile />;
       case "Addcourse":
         return <Addcourse />;
       case "Addworkshop":
@@ -95,8 +113,8 @@ export default function SidebarDemo() {
   return (
     <div
       className={cn(
-        " flex flex-col md:flex-row bg-gray-100 dark:bg-neutral-800 w-full flex-1 mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden ",
-        "h-screen w-full" // for your use case, use `h-screen` instead of `h-[60vh]`
+        "flex flex-col md:flex-row bg-gray-100 dark:bg-neutral-800 w-full flex-1 mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden",
+        "h-screen w-full" 
       )}
     >
       <Sidebar open={open} setOpen={setOpen}>
