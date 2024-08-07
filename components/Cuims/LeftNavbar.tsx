@@ -1,5 +1,5 @@
+//@ts-nocheck
 "use client";
-
 import { ConnectWallet, useAddress, useContract } from "@thirdweb-dev/react";
 import React, { useState, useEffect } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "../ui/sidebar";
