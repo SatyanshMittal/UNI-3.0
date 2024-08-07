@@ -17,6 +17,7 @@
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.9.5",
     "@tabler/icons-react": "^3.11.0",
+    "@tanstack/react-query": "^5.51.21",
     "@thirdweb-dev/react": "^4.9.4",
     "@thirdweb-dev/sdk": "^4.0.99",
     "class-variance-authority": "^0.7.0",
