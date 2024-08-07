@@ -19,7 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
-      <ThirdwebProvider desiredChainId={ChainId.Mumbai}>{children}
+      <ThirdwebProvider desiredChainId={ChainId.Mumbai}>
+        {children}
       </ThirdwebProvider>
       </body>
     </html>
